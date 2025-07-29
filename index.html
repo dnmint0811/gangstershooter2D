@@ -2,12 +2,15 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Chọn nhiệm vụ</title>
+  <title>Misson Select</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 20px;
-      font-family: sans-serif;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 12px; /* nhỏ vừa mắt vì font này to */
+      line-height: 1.5;
       background: #111;
       color: white;
       text-align: center;
@@ -16,31 +19,42 @@
       margin-bottom: 20px;
     }
     .map-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .map-option {
-      border: 2px solid #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 300px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .map-option:hover {
-      transform: scale(1.05);
-    }
-    .map-option img {
-      width: 100%;
-      display: block;
-    }
-    .map-option p {
-      margin: 0;
-      padding: 10px;
-      background: #222;
-    }
+  display: flex;
+  flex-wrap: nowrap;         /* ❗ KHÔNG cho xuống dòng */
+  overflow-x: auto;          /* ✅ Trượt ngang nếu không đủ chỗ */
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.map-option {
+  flex: 0 0 auto;
+  width: 200px;              /* ✅ Kích thước nhỏ hơn */
+  border: 2px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: #000;
+}
+
+.map-option:hover {
+  transform: scale(1.05);
+}
+
+.map-option img {
+  width: 100%;
+  display: block;
+}
+
+.map-option p {
+  margin: 0;
+  padding: 10px;
+  background: #222;
+  color: white;
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
