@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chọn nhiệm vụ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .map-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .map-option {
+      border: 2px solid #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .map-option:hover {
+      transform: scale(1.05);
+    }
+    .map-option img {
+      width: 100%;
+      display: block;
+    }
+    .map-option p {
+      margin: 0;
+      padding: 10px;
+      background: #222;
+    }
+  </style>
+</head>
+<body>
+ <h1>Chọn nhiệm vụ</h1>
+<div class="map-grid">
+  <div class="map-option" onclick="startGame('map1.png')">
+    <img src="assets/images/map1.png" alt="Map 1">
+    <p>Back Alley Night</p>
+  </div>
+  <div class="map-option" onclick="startGame('map2.png')">
+    <img src="assets/images/map2.png" alt="Map 2">
+    <p>Construction Zone</p>
+  </div>
+  <div class="map-option" onclick="startGame('map3.png')">
+    <img src="assets/images/map3.png" alt="Map 3">
+    <p>Subway Escape</p>
+  </div>
+  <div class="map-option" onclick="startGame('map4.png')">
+    <img src="assets/images/map4.png" alt="Map 4">
+    <p>Don's Mansion</p>
+  </div>
+</div>
+
+  <script>
+    function startGame(mapImage) {
+  localStorage.setItem("selectedMap", mapImage);
+  window.location.href = "gameplay.html"; // thay vì "index.html"
+}
+
+  </script>
+</body>
+</html>
